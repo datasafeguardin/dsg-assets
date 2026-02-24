@@ -1,5 +1,5 @@
 //Change below as per the Environment
-API_BASE_URL = 'https://aws-demo-idp.datasafeguard.ai/pmp/cmp/';
+API_BASE_URL = 'https://aws-demo-pmp.datasafeguard.ai/pmp/cmp/';
 API_FETCH_BANNER = "get_dcb_info";
 API_POST_PAYLOAD = "store_dcb_payload"
 var selectedLanguage = 'default';
