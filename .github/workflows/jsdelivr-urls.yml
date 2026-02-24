@@ -1,0 +1,31 @@
+name: Generate jsDelivr URLs
+
+on:
+  push:
+    tags:
+      - 'v*'   # runs for tags like v1.0.0
+
+jobs:
+  print-urls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract version
+        id: vars
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Show jsDelivr URLs
+        run: |
+          echo "Version: $VERSION"
+          echo ""
+          echo "dsg-cookie.js:"
+          echo "https://cdn.jsdelivr.net/gh/datasafeguardin/dsg-assets@$VERSION/dsg-cookie.js"
+          echo ""
+          echo "dsg-cookie.css:"
+          echo "https://cdn.jsdelivr.net/gh/datasafeguardin/dsg-assets@$VERSION/dsg-cookie.css"
+          echo ""
+          echo "Banner/renderDCB.js:"
+          echo "https://cdn.jsdelivr.net/gh/datasafeguardin/dsg-assets@$VERSION/Banner/renderDCB.js"
+          echo ""
+          echo "Banner/renderDCB.css:"
+          echo "https://cdn.jsdelivr.net/gh/datasafeguardin/dsg-assets@$VERSION/Banner/renderDCB.css"
+
